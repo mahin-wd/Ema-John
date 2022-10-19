@@ -5,7 +5,7 @@ import logo from '../../images/Logo.svg';
 import './Nav.css'
 
 const Nav = () => {
-    const {user, signOut} = useContext(AuthContext)
+    const {user, logOut} = useContext(AuthContext)
     return (
         <nav className='navigation'>
             <img src={logo} alt="" />
@@ -16,15 +16,15 @@ const Nav = () => {
 
                 {
                     user?.uid?
-                    <Link onClick={signOut}>
+                    <Link onClick={logOut}>
                     Log Out
                     </Link>
-                    :
-                    <>
 
+                    :
+
+                    <>
                     <Link to="/login">Log In</Link>
                     <Link to="/signup">Sign Up</Link>
-
                     </>
                 }
             </div>

@@ -8,13 +8,13 @@
     text-decoration: none;
 }
 
-.clear, .review{
+.shipping, .review{
     display: flex;
     align-items: center;
     justify-content: center;
     height: 30px;
     width: 100%;
-    background-color: #FF3030;
+    background-color: #FF9900;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -22,7 +22,7 @@
     cursor: pointer;
 }
 
-.clear p, .review p{
+.shipping p, .review p{
     margin-right: 10px;
 }
 

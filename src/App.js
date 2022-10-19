@@ -7,6 +7,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { productsAndCart } from './Loaders/productsAndCart';
 import Login from './Components/Login/Login';
 import SignUp from './Components/SignUp/SignUp'
+import Shipping from './Components/Shipping/Shipping';
+import PrivateRoute from './PrivateRouter/PrivateRoute';
 
 
 function App() {
@@ -19,6 +21,11 @@ function App() {
       path: '/',
       loader: () => fetch('products.json'),
       element: <Shop></Shop>
+    },
+
+    {
+      path: '/shipping',
+      element: <PrivateRoute><Shipping></Shipping></PrivateRoute>
     },
 
     {

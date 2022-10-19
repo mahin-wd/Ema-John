@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 import './Cart.css'
 import { Link } from 'react-router-dom';
@@ -28,15 +28,19 @@ const Cart = (props) => {
                 <p>Shipping Price: ${shipping}</p>
                 <p>Vat: ${vat}</p>
                 <h3>Grand Total: ${grandTotal}</h3>
-                <button className='clear'>
-                    <p>Clear Cart</p>
-                    <FontAwesomeIcon icon={faTrashCan}></FontAwesomeIcon>
-                </button>
+                
                 <Link to="/orders">
-                <button className='review'>
-                    <p>Review Order</p>
-                    <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
-                </button>
+                    <button className='review'>
+                        <p>Review Order</p>
+                        <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
+                    </button>
+                </Link>
+
+                <Link to="/shipping">
+                    <button className='shipping'>
+                        <p>Shipping</p>
+                        <FontAwesomeIcon icon={faCartShopping}></FontAwesomeIcon>
+                    </button>
                 </Link>
         </div>
     );
