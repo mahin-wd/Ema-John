@@ -4,6 +4,10 @@
     padding: 50px 20px;
 }
 
+.cart a{
+    text-decoration: none;
+}
+
 .clear, .review{
     display: flex;
     align-items: center;
