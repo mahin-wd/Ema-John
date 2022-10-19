@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Main from './Layouts/Main';
 import Shop from './Components/Shop/Shop'
@@ -7,6 +6,7 @@ import About from './Components/About/About'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { productsAndCart } from './Loaders/productsAndCart';
 import Login from './Components/Login/Login';
+import SignUp from './Components/SignUp/SignUp'
 
 
 function App() {
@@ -35,6 +35,10 @@ function App() {
     {
       path: '/login',
       element: <Login></Login>
+    },
+    {
+      path: '/signup',
+      element: <SignUp></SignUp>
     }
   ]
   }

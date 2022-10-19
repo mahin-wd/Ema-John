@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Login.css'
+import './SignUp.css'
 
-const Login = () => {
+const SignUP = () => {
     return (
         <div className='form-container'>
-            <h2 className='form-title'>Login</h2>
+            <h2 className='form-title'>Sign Up</h2>
             <form>
                 <div className="form-control">
                     <label htmlFor="email">Email</label>
@@ -16,11 +16,15 @@ const Login = () => {
                     <label htmlFor="password">Password</label>
                     <input type="password" name="password" required />
                 </div>
+                <div className="form-control">
+                    <label htmlFor="confirm">Confirm Password</label>
+                    <input type="password" name="confirm" required />
+                </div>
                 <input className='btn-submit' type="submit" value="Login" />
             </form>
-            <p>New to Ema John Shoppint? <br /> Please <Link to="/signup">Sign Up</Link></p>
+            <p>Already Hava an Account? <br /> Please <Link to="/login">Log In</Link></p>
         </div>
     );
 };
 
-export default Login;
+export default SignUP;
