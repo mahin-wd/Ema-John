@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Contexts/UserContext';
 import logo from '../../images/Logo.svg';
 import './Nav.css'
 
 const Nav = () => {
+    const {user, signOut} = useContext(AuthContext)
     return (
         <nav className='navigation'>
             <img src={logo} alt="" />
@@ -11,8 +13,20 @@ const Nav = () => {
                 <Link to="/">Home</Link>
                 <Link to="/orders">Orders</Link>
                 <Link to="/about">About Us</Link>
-                <Link to="/login">Log In</Link>
-                <Link to="/signup">Sign Up</Link>
+
+                {
+                    user?.uid?
+                    <Link onClick={signOut}>
+                    Log Out
+                    </Link>
+                    :
+                    <>
+
+                    <Link to="/login">Log In</Link>
+                    <Link to="/signup">Sign Up</Link>
+
+                    </>
+                }
             </div>
         </nav>
     );
