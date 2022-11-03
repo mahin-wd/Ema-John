@@ -15,6 +15,34 @@
     background-color: #ffe4c2;
 }
 
+.pagination{
+    margin-left: 200px;
+    margin-top: 50px;
+}
+
+.pagination button{
+    border: none;
+    border-radius: 10px;
+    background-color: #ffe4c2;
+    font-size: 20px;
+    margin: 15px;
+    padding: 10px 20px;
+}
+
+.pagination .selected{
+    background-color: #ffd5a2;
+}
+
+.options{
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-color: #ffe4c2;
+    font-size: 15px;
+    margin: 15px;
+    padding: 10px 20px;
+}
+
 @media screen and (max-width: 600px) {
 
     .shop-container{

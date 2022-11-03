@@ -7,10 +7,14 @@ const Login = () => {
 
     const navigate = useNavigate();
 
-    const {logIn} = useContext(AuthContext)
+    const {logIn, loader} = useContext(AuthContext)
 
     const location = useLocation();
     const from = location.state?.form?.pathname || '/';
+
+    if(loader) {
+        return <div>Loading...</div>
+    }
 
     const handleSubmit = event => {
         event.preventDefault();

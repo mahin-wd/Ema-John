@@ -5,11 +5,11 @@ import Cart from '../Cart/Cart';
 import ReviewItems from '../ReviewItems/ReviewItems';
 
 const Orders = () => {
-    const {products, previousCart} = useLoaderData();
+    const { previousCart} = useLoaderData();
     const [cart, setCart] = useState(previousCart);
     
     const removeItem = (id) => {
-        const remaining = cart.filter(product => product.id !== id);
+        const remaining = cart.filter(product => product._id !== id);
         setCart(remaining);
         removeFromDb(id);
     }
@@ -19,7 +19,7 @@ const Orders = () => {
             <div className="">
                 {
                     cart.map(product => <ReviewItems
-                                key={product.id}
+                                key={product._id}
                                 product={product}
                                 removeItem={removeItem}
                             ></ReviewItems>)
