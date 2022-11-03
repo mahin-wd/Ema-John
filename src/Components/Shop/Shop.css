@@ -16,7 +16,7 @@
 }
 
 .pagination{
-    margin-left: 200px;
+    margin-left: 500px;
     margin-top: 50px;
 }
 
@@ -30,7 +30,7 @@
 }
 
 .pagination .selected{
-    background-color: #ffd5a2;
+    background-color: #ffcc8d;
 }
 
 .options{

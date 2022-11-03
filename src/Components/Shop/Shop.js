@@ -4,14 +4,24 @@ import Product from '../Product/Product';
 import '../../utilities/fakedb'
 import './Shop.css'
 import { addToDb, getStoredCart } from '../../utilities/fakedb';
-import { useLoaderData } from 'react-router-dom';
 
 const Shop = () => {
-    const {products, count} = useLoaderData()
+    // const {products, count} = useLoaderData()
+    const [products, setProducts] = useState([]);
+    const [count, setCount] = useState([]);
     const [cart, setCart] = useState([]);
     const [page, setPage] = useState(0);
     const [size, setSize] = useState(10);
-    console.log(count)
+
+    useEffect( () => {
+        const url = `http://localhost:5000/products?page=${page}&size=${size}`;
+        fetch(url)
+        .then(res => res.json())
+           .then(data => {
+            setProducts(data.products);
+               setCount(data.count);
+           })
+    }, [page, size])
 
     const pages = Math.ceil(count / size);
     
